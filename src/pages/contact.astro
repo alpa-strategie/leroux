@@ -8,10 +8,10 @@ import Layout from '../layouts/Layout.astro';
 		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 			<div class="max-w-3xl mx-auto text-center mb-12">
 				<h1 class="text-4xl font-extrabold text-gray-900 tracking-tight sm:text-5xl mb-6">
-					Prêt à simplifier votre activité ? Parlons-en.
+					Simplifions votre activité. Parlons-en.
 				</h1>
 				<p class="text-xl text-gray-500">
-					Expliquez-moi votre situation, vos questions ou votre projet : je vous réponds avec des recommandations simples et utiles, adaptées à votre activité.
+					Une question ? Un projet ? Décrivez votre besoin. Je vous réponds avec des conseils simples et adaptés à votre métier.
 				</p>
 			</div>
 
@@ -30,7 +30,7 @@ import Layout from '../layouts/Layout.astro';
 						</div>
 					</div>
 					<div>
-						<label for="structure" class="block text-sm font-medium text-gray-700">Structure</label>
+						<label for="structure" class="block text-sm font-medium text-gray-700">Votre profil</label>
 						<div class="mt-1">
 							<select id="structure" name="structure" class="py-3 px-4 block w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md border">
 								<option>Indépendant</option>
@@ -40,13 +40,13 @@ import Layout from '../layouts/Layout.astro';
 						</div>
 					</div>
 					<div>
-						<label for="need" class="block text-sm font-medium text-gray-700">Besoin principal</label>
+						<label for="need" class="block text-sm font-medium text-gray-700">Votre besoin</label>
 						<div class="mt-1">
-							<input type="text" name="need" id="need" class="py-3 px-4 block w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md border" placeholder="Ex: Automatisation, Audit, IA...">
+							<input type="text" name="need" id="need" class="py-3 px-4 block w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md border" placeholder="Ex : Automatisation, IA, gagner du temps...">
 						</div>
 					</div>
 					<div>
-						<label for="message" class="block text-sm font-medium text-gray-700">Message libre</label>
+						<label for="message" class="block text-sm font-medium text-gray-700">Votre message</label>
 						<div class="mt-1">
 							<textarea id="message" name="message" rows="4" class="py-3 px-4 block w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md border" required></textarea>
 						</div>
@@ -121,21 +121,21 @@ import Layout from '../layouts/Layout.astro';
 		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 			<div class="grid grid-cols-1 md:grid-cols-2 gap-12 text-center md:text-left">
 				<div>
-					<h3 class="text-lg font-bold text-gray-900 mb-6 uppercase tracking-wider">Autres moyens de contact</h3>
+					<h3 class="text-lg font-bold text-gray-900 mb-6 uppercase tracking-wider">Autres contacts</h3>
 					<div class="space-y-4">
 						<a href="#" class="flex items-center justify-center md:justify-start text-indigo-600 hover:text-indigo-800 font-medium">
-							<span class="mr-2">📅</span> Réserver un échange gratuit
+							<span class="mr-2">📅</span> Réserver un appel
 						</a>
 						<a href="mailto:baptiste@leroux.cv" class="flex items-center justify-center md:justify-start text-indigo-600 hover:text-indigo-800 font-medium">
-							<span class="mr-2">📧</span> Me contacter par email
+							<span class="mr-2">📧</span> M'envoyer un email
 						</a>
 						<a href="https://www.linkedin.com/in/baptiste-leroux-550662a/" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center md:justify-start text-indigo-600 hover:text-indigo-800 font-medium">
-							<span class="mr-2">🔗</span> Ajouter sur LinkedIn
+							<span class="mr-2">🔗</span> Me suivre sur LinkedIn
 						</a>
 					</div>
 				</div>
 				<div>
-					<h3 class="text-lg font-bold text-gray-900 mb-6 uppercase tracking-wider">Informations pratiques</h3>
+					<h3 class="text-lg font-bold text-gray-900 mb-6 uppercase tracking-wider">Infos pratiques</h3>
 					<ul class="space-y-4 text-gray-600">
 						<li class="flex items-center justify-center md:justify-start">
 							<svg class="h-6 w-6 text-gray-400 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -148,13 +148,13 @@ import Layout from '../layouts/Layout.astro';
 							<svg class="h-6 w-6 text-gray-400 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
 								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
 							</svg>
-							Accompagnement à distance ou sur site
+							À distance ou sur site
 						</li>
 						<li class="flex items-center justify-center md:justify-start">
 							<svg class="h-6 w-6 text-gray-400 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
 								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
 							</svg>
-							Réponse sous 24h–48h
+							Réponse sous 48h max
 						</li>
 					</ul>
 				</div>
@@ -169,51 +169,51 @@ import Layout from '../layouts/Layout.astro';
             <dl class="space-y-8 divide-y divide-gray-200">
                 <div class="pt-6 md:grid md:grid-cols-12 md:gap-8">
                     <dt class="text-base font-medium text-gray-900 md:col-span-5">
-                        Je ne suis pas “tech”, est-ce pour moi ?
+                        Pas à l'aise avec la tech ?
                     </dt>
                     <dd class="mt-2 md:mt-0 md:col-span-7">
                         <p class="text-base text-gray-500">
-                            Oui, mon rôle est de rendre la technologie simple et accessible.
+                            C'est mon rôle : je rends la technique simple et accessible.
                         </p>
                     </dd>
                 </div>
                 <div class="pt-6 md:grid md:grid-cols-12 md:gap-8">
                     <dt class="text-base font-medium text-gray-900 md:col-span-5">
-                        Est-ce que vous installez les outils ?
+                        Installez-vous les outils ?
                     </dt>
                     <dd class="mt-2 md:mt-0 md:col-span-7">
                         <p class="text-base text-gray-500">
-                            Oui, je peux conseiller et mettre en place.
+                            Oui. Je conseille, j'installe et je configure pour vous.
                         </p>
                     </dd>
                 </div>
                 <div class="pt-6 md:grid md:grid-cols-12 md:gap-8">
                     <dt class="text-base font-medium text-gray-900 md:col-span-5">
-                        Peut-on avancer avec un petit budget ?
+                        Et si j'ai un petit budget ?
                     </dt>
                     <dd class="mt-2 md:mt-0 md:col-span-7">
                         <p class="text-base text-gray-500">
-                            Oui, étape par étape.
+                            On avance pas à pas, selon vos moyens.
                         </p>
                     </dd>
                 </div>
                  <div class="pt-6 md:grid md:grid-cols-12 md:gap-8">
                     <dt class="text-base font-medium text-gray-900 md:col-span-5">
-                         Créez-vous des solutions sur mesure ?
+                         Faites-vous du sur-mesure ?
                     </dt>
                     <dd class="mt-2 md:mt-0 md:col-span-7">
                         <p class="text-base text-gray-500">
-                            Oui, lorsque pertinent.
+                            Oui, quand c'est la meilleure solution.
                         </p>
                     </dd>
                 </div>
                 <div class="pt-6 md:grid md:grid-cols-12 md:gap-8">
                     <dt class="text-base font-medium text-gray-900 md:col-span-5">
-                        L’IA est-elle utile pour une petite activité ?
+                        L’IA est-elle utile pour moi ?
                     </dt>
                     <dd class="mt-2 md:mt-0 md:col-span-7">
                         <p class="text-base text-gray-500">
-                            Oui, si elle cible les tâches à forte valeur.
+                            Oui, pour éliminer vos tâches répétitives.
                         </p>
                     </dd>
                 </div>
@@ -221,4 +221,3 @@ import Layout from '../layouts/Layout.astro';
         </div>
     </section>
 </Layout>
-
