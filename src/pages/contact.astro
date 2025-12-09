@@ -4,35 +4,35 @@ import Layout from '../layouts/Layout.astro';
 
 <Layout title="Contact">
 	<!-- Section 1 — Titre -->
-	<section class="bg-white py-16 sm:py-24">
+	<section class="bg-surface py-16 sm:py-24">
 		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 			<div class="max-w-3xl mx-auto text-center mb-12">
-				<h1 class="text-4xl font-extrabold text-gray-900 tracking-tight sm:text-5xl mb-6">
+				<h1 class="text-4xl font-extrabold text-text-main tracking-tight sm:text-5xl mb-6">
 					Prêt à simplifier votre activité ? Parlons-en.
 				</h1>
-				<p class="text-xl text-gray-500">
+				<p class="text-xl text-text-muted">
 					Une question ou un projet en tête ? Racontez-moi votre besoin. Je vous répondrai avec des pistes concrètes.
 				</p>
 			</div>
 
 			<div class="max-w-xl mx-auto">
-				<form id="contact-form" class="grid grid-cols-1 gap-y-6 bg-white p-8 rounded-xl shadow-lg border border-gray-100">
+				<form id="contact-form" class="grid grid-cols-1 gap-y-6 bg-surface p-8 rounded-xl shadow-lg border border-border-light">
 					<div>
-						<label for="name" class="block text-sm font-medium text-gray-700">Nom</label>
+						<label for="name" class="block text-sm font-medium text-text-body">Nom</label>
 						<div class="mt-1">
-							<input type="text" name="name" id="name" autocomplete="name" class="py-3 px-4 block w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md border" required>
+							<input type="text" name="name" id="name" autocomplete="name" class="py-3 px-4 block w-full shadow-subtle focus:ring-primary focus:border-primary border-border-light rounded-md border" required>
 						</div>
 					</div>
 					<div>
-						<label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+						<label for="email" class="block text-sm font-medium text-text-body">Email</label>
 						<div class="mt-1">
-							<input type="email" name="email" id="email" autocomplete="email" class="py-3 px-4 block w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md border" required>
+							<input type="email" name="email" id="email" autocomplete="email" class="py-3 px-4 block w-full shadow-subtle focus:ring-primary focus:border-primary border-border-light rounded-md border" required>
 						</div>
 					</div>
 					<div>
-						<label for="structure" class="block text-sm font-medium text-gray-700">Votre profil</label>
+						<label for="structure" class="block text-sm font-medium text-text-body">Votre profil</label>
 						<div class="mt-1">
-							<select id="structure" name="structure" class="py-3 px-4 block w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md border">
+							<select id="structure" name="structure" class="py-3 px-4 block w-full shadow-subtle focus:ring-primary focus:border-primary border-border-light rounded-md border">
 								<option>Indépendant</option>
 								<option>PME</option>
 								<option>Autre</option>
@@ -40,15 +40,15 @@ import Layout from '../layouts/Layout.astro';
 						</div>
 					</div>
 					<div>
-						<label for="need" class="block text-sm font-medium text-gray-700">Votre besoin</label>
+						<label for="need" class="block text-sm font-medium text-text-body">Votre besoin</label>
 						<div class="mt-1">
-							<input type="text" name="need" id="need" class="py-3 px-4 block w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md border" placeholder="Ex : Automatisation, IA, gagner du temps...">
+							<input type="text" name="need" id="need" class="py-3 px-4 block w-full shadow-subtle focus:ring-primary focus:border-primary border-border-light rounded-md border" placeholder="Ex : Automatisation, IA, gagner du temps...">
 						</div>
 					</div>
 					<div>
-						<label for="message" class="block text-sm font-medium text-gray-700">Votre message</label>
+						<label for="message" class="block text-sm font-medium text-text-body">Votre message</label>
 						<div class="mt-1">
-							<textarea id="message" name="message" rows="4" class="py-3 px-4 block w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md border" required></textarea>
+							<textarea id="message" name="message" rows="4" class="py-3 px-4 block w-full shadow-subtle focus:ring-primary focus:border-primary border-border-light rounded-md border" required></textarea>
 						</div>
 					</div>
 					
@@ -56,7 +56,7 @@ import Layout from '../layouts/Layout.astro';
 					<div id="form-message" class="hidden rounded-md p-4"></div>
 
 					<div>
-						<button type="submit" id="submit-button" class="w-full inline-flex justify-center py-3 px-6 border border-transparent shadow-sm text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition-colors disabled:opacity-50 disabled:cursor-not-allowed">
+						<button type="submit" id="submit-button" class="w-full inline-flex justify-center py-3 px-6 border border-transparent shadow-subtle text-base font-medium rounded-md text-white bg-primary hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary transition-colors disabled:opacity-50 disabled:cursor-not-allowed">
 							Envoyer
 						</button>
 					</div>
@@ -117,41 +117,41 @@ import Layout from '../layouts/Layout.astro';
 	</script>
 
 	<!-- Section 2 — Appels à action alternatifs & Infos pratiques -->
-	<section class="bg-gray-50 py-16">
+	<section class="bg-background py-16">
 		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 			<div class="grid grid-cols-1 md:grid-cols-2 gap-12 text-center md:text-left">
 				<div>
-					<h3 class="text-lg font-bold text-gray-900 mb-6 uppercase tracking-wider">Autres contacts</h3>
+					<h3 class="text-lg font-bold text-text-main mb-6 uppercase tracking-wider">Autres contacts</h3>
 					<div class="space-y-4">
-						<a href="#" class="flex items-center justify-center md:justify-start text-indigo-600 hover:text-indigo-800 font-medium">
+						<a href="#" class="flex items-center justify-center md:justify-start text-primary hover:text-primary-700 font-medium">
 							<span class="mr-2">📅</span> Réserver un appel
 						</a>
-						<a href="mailto:baptiste@leroux.cv" class="flex items-center justify-center md:justify-start text-indigo-600 hover:text-indigo-800 font-medium">
+						<a href="mailto:baptiste@leroux.cv" class="flex items-center justify-center md:justify-start text-primary hover:text-primary-700 font-medium">
 							<span class="mr-2">📧</span> M'envoyer un email
 						</a>
-						<a href="https://www.linkedin.com/in/baptiste-leroux-550662a/" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center md:justify-start text-indigo-600 hover:text-indigo-800 font-medium">
+						<a href="https://www.linkedin.com/in/baptiste-leroux-550662a/" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center md:justify-start text-primary hover:text-primary-700 font-medium">
 							<span class="mr-2">🔗</span> Me suivre sur LinkedIn
 						</a>
 					</div>
 				</div>
 				<div>
-					<h3 class="text-lg font-bold text-gray-900 mb-6 uppercase tracking-wider">Infos pratiques</h3>
-					<ul class="space-y-4 text-gray-600">
+					<h3 class="text-lg font-bold text-text-main mb-6 uppercase tracking-wider">Infos pratiques</h3>
+					<ul class="space-y-4 text-text-muted">
 						<li class="flex items-center justify-center md:justify-start">
-							<svg class="h-6 w-6 text-gray-400 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+							<svg class="h-6 w-6 text-text-light mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
 								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
 								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
 							</svg>
 							Basé en France
 						</li>
 						<li class="flex items-center justify-center md:justify-start">
-							<svg class="h-6 w-6 text-gray-400 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+							<svg class="h-6 w-6 text-text-light mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
 								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
 							</svg>
 							À distance ou sur site
 						</li>
 						<li class="flex items-center justify-center md:justify-start">
-							<svg class="h-6 w-6 text-gray-400 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+							<svg class="h-6 w-6 text-text-light mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
 								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
 							</svg>
 							Réponse sous 48h max
@@ -162,57 +162,57 @@ import Layout from '../layouts/Layout.astro';
 		</div>
 	</section>
 
-    <!-- FAQ Section (Included in Contact or About often, added here based on 'Clarifier son activité' availability) -->
-    <section class="bg-white py-16 sm:py-24 border-t border-gray-100">
+    <!-- FAQ Section -->
+    <section class="bg-surface py-16 sm:py-24 border-t border-border-light">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-extrabold text-gray-900 text-center mb-12">Questions fréquentes</h2>
-            <dl class="space-y-8 divide-y divide-gray-200">
+            <h2 class="text-3xl font-extrabold text-text-main text-center mb-12">Questions fréquentes</h2>
+            <dl class="space-y-8 divide-y divide-border-light">
 				<div class="pt-6 md:grid md:grid-cols-12 md:gap-8">
-					<dt class="text-base font-medium text-gray-900 md:col-span-5">
+					<dt class="text-base font-medium text-text-main md:col-span-5">
 						La technique vous fait peur ?
 					</dt>
 					<dd class="mt-2 md:mt-0 md:col-span-7">
-						<p class="text-base text-gray-500">
+						<p class="text-base text-text-muted">
 							Aucun souci. Je m'occupe de la complexité, vous gardez le contrôle.
 						</p>
 					</dd>
 				</div>
 				<div class="pt-6 md:grid md:grid-cols-12 md:gap-8">
-					<dt class="text-base font-medium text-gray-900 md:col-span-5">
+					<dt class="text-base font-medium text-text-main md:col-span-5">
 						Installez-vous les outils ?
 					</dt>
 					<dd class="mt-2 md:mt-0 md:col-span-7">
-						<p class="text-base text-gray-500">
+						<p class="text-base text-text-muted">
 							Oui. Je conseille, j'installe et je règle tout pour vous.
 						</p>
 					</dd>
 				</div>
                 <div class="pt-6 md:grid md:grid-cols-12 md:gap-8">
-                    <dt class="text-base font-medium text-gray-900 md:col-span-5">
+                    <dt class="text-base font-medium text-text-main md:col-span-5">
                         Et si j'ai un petit budget ?
                     </dt>
                     <dd class="mt-2 md:mt-0 md:col-span-7">
-                        <p class="text-base text-gray-500">
+                        <p class="text-base text-text-muted">
                             On avance pas à pas, selon vos moyens.
                         </p>
                     </dd>
                 </div>
 				<div class="pt-6 md:grid md:grid-cols-12 md:gap-8">
-					<dt class="text-base font-medium text-gray-900 md:col-span-5">
+					<dt class="text-base font-medium text-text-main md:col-span-5">
 						Faites-vous du sur-mesure ?
 					</dt>
 					<dd class="mt-2 md:mt-0 md:col-span-7">
-						<p class="text-base text-gray-500">
+						<p class="text-base text-text-muted">
 							Oui, si c'est vraiment nécessaire.
 						</p>
 					</dd>
 				</div>
 				<div class="pt-6 md:grid md:grid-cols-12 md:gap-8">
-					<dt class="text-base font-medium text-gray-900 md:col-span-5">
+					<dt class="text-base font-medium text-text-main md:col-span-5">
 						L’IA est-elle utile pour moi ?
 					</dt>
 					<dd class="mt-2 md:mt-0 md:col-span-7">
-						<p class="text-base text-gray-500">
+						<p class="text-base text-text-muted">
 							Oui, si vous voulez arrêter de perdre du temps sur des tâches répétitives.
 						</p>
 					</dd>
