@@ -1,0 +1,128 @@
+---
+import '../styles/global.css';
+
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="fr" class="scroll-smooth">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="J’accompagne les indépendants et les PME qui veulent gagner en efficacité, réduire la complexité et adopter des outils réellement utiles." />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title} | Baptiste Leroux</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+	</head>
+	<body class="font-inter text-gray-800 bg-white antialiased flex flex-col min-h-screen">
+		<header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-100">
+			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+				<div class="flex justify-between items-center h-16">
+					<div class="flex-shrink-0 flex items-center">
+						<a href="/" class="text-xl font-bold text-gray-900 tracking-tight">Baptiste Leroux<span class="text-indigo-600">.</span></a>
+					</div>
+					<nav class="hidden md:flex space-x-8">
+						<a href="/" class="text-gray-600 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Accueil</a>
+						<a href="/about" class="text-gray-600 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">À propos</a>
+						<a href="/services" class="text-gray-600 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Services</a>
+						<a href="/contact" class="text-gray-600 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Contact</a>
+					</nav>
+					<div class="hidden md:flex items-center">
+						<a href="/contact" class="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors shadow-sm">
+							Prendre RDV
+						</a>
+					</div>
+					<!-- Mobile menu button -->
+					<div class="md:hidden flex items-center">
+						<button id="mobile-menu-button" type="button" class="text-gray-500 hover:text-gray-600 focus:outline-none p-2" aria-controls="mobile-menu" aria-expanded="false">
+							<span class="sr-only">Ouvrir le menu</span>
+							<svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+							</svg>
+						</button>
+					</div>
+				</div>
+			</div>
+			<!-- Mobile menu -->
+			<div class="md:hidden hidden bg-white border-b border-gray-100" id="mobile-menu">
+				<div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+					<a href="/" class="block text-gray-700 hover:text-indigo-600 hover:bg-gray-50 px-3 py-2 rounded-md text-base font-medium">Accueil</a>
+					<a href="/about" class="block text-gray-700 hover:text-indigo-600 hover:bg-gray-50 px-3 py-2 rounded-md text-base font-medium">À propos</a>
+					<a href="/services" class="block text-gray-700 hover:text-indigo-600 hover:bg-gray-50 px-3 py-2 rounded-md text-base font-medium">Services</a>
+					<a href="/contact" class="block text-gray-700 hover:text-indigo-600 hover:bg-gray-50 px-3 py-2 rounded-md text-base font-medium">Contact</a>
+				</div>
+			</div>
+		</header>
+
+		<main class="flex-grow">
+			<slot />
+		</main>
+
+		<footer class="bg-gray-50 border-t border-gray-100">
+			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+				<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+					<div class="col-span-1">
+						<a href="/" class="text-lg font-bold text-gray-900 tracking-tight">Baptiste Leroux<span class="text-indigo-600">.</span></a>
+						<p class="mt-4 text-sm text-gray-500 max-w-xs">
+							Simplifier. Moderniser. Accélérer. Le numérique et l’IA au service de votre activité.
+						</p>
+					</div>
+					<div>
+						<h3 class="text-sm font-semibold text-gray-400 uppercase tracking-wider">Navigation</h3>
+						<ul class="mt-4 space-y-3">
+							<li><a href="/" class="text-base text-gray-500 hover:text-indigo-600">Accueil</a></li>
+							<li><a href="/about" class="text-base text-gray-500 hover:text-indigo-600">À propos</a></li>
+							<li><a href="/services" class="text-base text-gray-500 hover:text-indigo-600">Services</a></li>
+							<li><a href="/contact" class="text-base text-gray-500 hover:text-indigo-600">Contact</a></li>
+						</ul>
+					</div>
+					<div>
+						<h3 class="text-sm font-semibold text-gray-400 uppercase tracking-wider">Contact</h3>
+						<ul class="mt-4 space-y-3">
+							<li class="flex items-center text-base text-gray-500">
+								<svg class="h-5 w-5 mr-2 text-indigo-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+								</svg>
+								<a href="mailto:baptiste@leroux.cv" class="hover:text-indigo-600">Me contacter par email</a>
+							</li>
+							<li class="flex items-center text-base text-gray-500">
+								<svg class="h-5 w-5 mr-2 text-indigo-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+								</svg>
+								Basé en France
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="mt-8 pt-8 border-t border-gray-200 flex flex-col md:flex-row justify-between items-center">
+					<p class="text-sm text-gray-400">
+						&copy; {new Date().getFullYear()} Baptiste Leroux. Tous droits réservés.
+					</p>
+					<div class="flex space-x-6 mt-4 md:mt-0">
+						<a href="https://www.linkedin.com/in/baptiste-leroux-550662a/" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-indigo-600">LinkedIn</a>
+					</div>
+				</div>
+			</div>
+		</footer>
+
+		<script>
+			const btn = document.getElementById('mobile-menu-button');
+			const menu = document.getElementById('mobile-menu');
+
+			btn?.addEventListener('click', () => {
+				menu?.classList.toggle('hidden');
+				const expanded = btn.getAttribute('aria-expanded') === 'true' || false;
+				btn.setAttribute('aria-expanded', (!expanded).toString());
+			});
+		</script>
+	</body>
+</html>
+

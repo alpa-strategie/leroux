@@ -1,0 +1,224 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Contact">
+	<!-- Section 1 — Titre -->
+	<section class="bg-white py-16 sm:py-24">
+		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-3xl mx-auto text-center mb-12">
+				<h1 class="text-4xl font-extrabold text-gray-900 tracking-tight sm:text-5xl mb-6">
+					Prêt à simplifier votre activité ? Parlons-en.
+				</h1>
+				<p class="text-xl text-gray-500">
+					Expliquez-moi votre situation, vos questions ou votre projet : je vous réponds avec des recommandations simples et utiles, adaptées à votre activité.
+				</p>
+			</div>
+
+			<div class="max-w-xl mx-auto">
+				<form id="contact-form" class="grid grid-cols-1 gap-y-6 bg-white p-8 rounded-xl shadow-lg border border-gray-100">
+					<div>
+						<label for="name" class="block text-sm font-medium text-gray-700">Nom</label>
+						<div class="mt-1">
+							<input type="text" name="name" id="name" autocomplete="name" class="py-3 px-4 block w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md border" required>
+						</div>
+					</div>
+					<div>
+						<label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+						<div class="mt-1">
+							<input type="email" name="email" id="email" autocomplete="email" class="py-3 px-4 block w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md border" required>
+						</div>
+					</div>
+					<div>
+						<label for="structure" class="block text-sm font-medium text-gray-700">Structure</label>
+						<div class="mt-1">
+							<select id="structure" name="structure" class="py-3 px-4 block w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md border">
+								<option>Indépendant</option>
+								<option>PME</option>
+								<option>Autre</option>
+							</select>
+						</div>
+					</div>
+					<div>
+						<label for="need" class="block text-sm font-medium text-gray-700">Besoin principal</label>
+						<div class="mt-1">
+							<input type="text" name="need" id="need" class="py-3 px-4 block w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md border" placeholder="Ex: Automatisation, Audit, IA...">
+						</div>
+					</div>
+					<div>
+						<label for="message" class="block text-sm font-medium text-gray-700">Message libre</label>
+						<div class="mt-1">
+							<textarea id="message" name="message" rows="4" class="py-3 px-4 block w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md border" required></textarea>
+						</div>
+					</div>
+					
+					<!-- Zone de feedback pour l'utilisateur -->
+					<div id="form-message" class="hidden rounded-md p-4"></div>
+
+					<div>
+						<button type="submit" id="submit-button" class="w-full inline-flex justify-center py-3 px-6 border border-transparent shadow-sm text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition-colors disabled:opacity-50 disabled:cursor-not-allowed">
+							Envoyer
+						</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</section>
+
+	<script>
+		const form = document.getElementById('contact-form') as HTMLFormElement;
+		const submitButton = document.getElementById('submit-button') as HTMLButtonElement;
+		const messageDiv = document.getElementById('form-message') as HTMLDivElement;
+
+		form?.addEventListener('submit', async (e) => {
+			e.preventDefault();
+			
+			// Réinitialisation de l'état
+			submitButton.disabled = true;
+			submitButton.textContent = 'Envoi en cours...';
+			messageDiv.classList.add('hidden');
+			messageDiv.className = 'hidden rounded-md p-4'; // Reset classes
+
+			// Récupération des données
+			const formData = new FormData(form);
+			const data = Object.fromEntries(formData.entries());
+
+			try {
+				const response = await fetch('/api/send-email', {
+					method: 'POST',
+					headers: {
+						'Content-Type': 'application/json',
+					},
+					body: JSON.stringify(data),
+				});
+
+				const result = await response.json();
+
+				if (response.ok) {
+					// Succès
+					messageDiv.textContent = result.message;
+					messageDiv.classList.remove('hidden');
+					messageDiv.classList.add('bg-green-50', 'text-green-800', 'border', 'border-green-200');
+					form.reset();
+				} else {
+					// Erreur API
+					throw new Error(result.message || 'Une erreur est survenue.');
+				}
+			} catch (error) {
+				// Erreur réseau ou autre
+				messageDiv.textContent = error instanceof Error ? error.message : "Une erreur inconnue est survenue.";
+				messageDiv.classList.remove('hidden');
+				messageDiv.classList.add('bg-red-50', 'text-red-800', 'border', 'border-red-200');
+			} finally {
+				submitButton.disabled = false;
+				submitButton.textContent = 'Envoyer';
+			}
+		});
+	</script>
+
+	<!-- Section 2 — Appels à action alternatifs & Infos pratiques -->
+	<section class="bg-gray-50 py-16">
+		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="grid grid-cols-1 md:grid-cols-2 gap-12 text-center md:text-left">
+				<div>
+					<h3 class="text-lg font-bold text-gray-900 mb-6 uppercase tracking-wider">Autres moyens de contact</h3>
+					<div class="space-y-4">
+						<a href="#" class="flex items-center justify-center md:justify-start text-indigo-600 hover:text-indigo-800 font-medium">
+							<span class="mr-2">📅</span> Réserver un échange gratuit
+						</a>
+						<a href="mailto:baptiste@leroux.cv" class="flex items-center justify-center md:justify-start text-indigo-600 hover:text-indigo-800 font-medium">
+							<span class="mr-2">📧</span> Me contacter par email
+						</a>
+						<a href="https://www.linkedin.com/in/baptiste-leroux-550662a/" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center md:justify-start text-indigo-600 hover:text-indigo-800 font-medium">
+							<span class="mr-2">🔗</span> Ajouter sur LinkedIn
+						</a>
+					</div>
+				</div>
+				<div>
+					<h3 class="text-lg font-bold text-gray-900 mb-6 uppercase tracking-wider">Informations pratiques</h3>
+					<ul class="space-y-4 text-gray-600">
+						<li class="flex items-center justify-center md:justify-start">
+							<svg class="h-6 w-6 text-gray-400 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+							</svg>
+							Basé en France
+						</li>
+						<li class="flex items-center justify-center md:justify-start">
+							<svg class="h-6 w-6 text-gray-400 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+							</svg>
+							Accompagnement à distance ou sur site
+						</li>
+						<li class="flex items-center justify-center md:justify-start">
+							<svg class="h-6 w-6 text-gray-400 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+							</svg>
+							Réponse sous 24h–48h
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</section>
+
+    <!-- FAQ Section (Included in Contact or About often, added here based on 'Clarifier son activité' availability) -->
+    <section class="bg-white py-16 sm:py-24 border-t border-gray-100">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-extrabold text-gray-900 text-center mb-12">Questions fréquentes</h2>
+            <dl class="space-y-8 divide-y divide-gray-200">
+                <div class="pt-6 md:grid md:grid-cols-12 md:gap-8">
+                    <dt class="text-base font-medium text-gray-900 md:col-span-5">
+                        Je ne suis pas “tech”, est-ce pour moi ?
+                    </dt>
+                    <dd class="mt-2 md:mt-0 md:col-span-7">
+                        <p class="text-base text-gray-500">
+                            Oui, mon rôle est de rendre la technologie simple et accessible.
+                        </p>
+                    </dd>
+                </div>
+                <div class="pt-6 md:grid md:grid-cols-12 md:gap-8">
+                    <dt class="text-base font-medium text-gray-900 md:col-span-5">
+                        Est-ce que vous installez les outils ?
+                    </dt>
+                    <dd class="mt-2 md:mt-0 md:col-span-7">
+                        <p class="text-base text-gray-500">
+                            Oui, je peux conseiller et mettre en place.
+                        </p>
+                    </dd>
+                </div>
+                <div class="pt-6 md:grid md:grid-cols-12 md:gap-8">
+                    <dt class="text-base font-medium text-gray-900 md:col-span-5">
+                        Peut-on avancer avec un petit budget ?
+                    </dt>
+                    <dd class="mt-2 md:mt-0 md:col-span-7">
+                        <p class="text-base text-gray-500">
+                            Oui, étape par étape.
+                        </p>
+                    </dd>
+                </div>
+                 <div class="pt-6 md:grid md:grid-cols-12 md:gap-8">
+                    <dt class="text-base font-medium text-gray-900 md:col-span-5">
+                         Créez-vous des solutions sur mesure ?
+                    </dt>
+                    <dd class="mt-2 md:mt-0 md:col-span-7">
+                        <p class="text-base text-gray-500">
+                            Oui, lorsque pertinent.
+                        </p>
+                    </dd>
+                </div>
+                <div class="pt-6 md:grid md:grid-cols-12 md:gap-8">
+                    <dt class="text-base font-medium text-gray-900 md:col-span-5">
+                        L’IA est-elle utile pour une petite activité ?
+                    </dt>
+                    <dd class="mt-2 md:mt-0 md:col-span-7">
+                        <p class="text-base text-gray-500">
+                            Oui, si elle cible les tâches à forte valeur.
+                        </p>
+                    </dd>
+                </div>
+            </dl>
+        </div>
+    </section>
+</Layout>
+
