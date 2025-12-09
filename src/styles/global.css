@@ -36,6 +36,41 @@ body {
   @apply antialiased;
 }
 
+@layer base {
+  h1 {
+    @apply text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-text-main mb-6 leading-tight;
+  }
+  h2 {
+    @apply text-2xl sm:text-3xl font-bold text-text-main mt-12 mb-8 leading-snug;
+  }
+  h3 {
+    @apply text-xl font-bold text-text-main mt-8 mb-4 leading-snug;
+  }
+  p {
+    @apply text-base sm:text-lg text-text-body mb-6 leading-relaxed;
+  }
+  
+  /* Standard content lists */
+  ul:not([class]), ol:not([class]) {
+    @apply my-6 ml-5 sm:ml-6 list-outside space-y-2;
+  }
+  ul:not([class]) {
+    @apply list-disc;
+  }
+  ol:not([class]) {
+    @apply list-decimal;
+  }
+  /* Apply base text style to list items globally to ensure consistency */
+  li {
+    @apply text-base sm:text-lg leading-relaxed;
+  }
+  
+  /* Prevent overflow on mobile */
+  img, video, canvas, svg {
+    @apply max-w-full h-auto;
+  }
+}
+
 /* Custom Utilities for the requested style */
 @layer utilities {
   .shadow-subtle {
